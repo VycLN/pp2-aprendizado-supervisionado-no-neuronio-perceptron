@@ -48,7 +48,7 @@ def treinamento(entradas, saidas, pesos, taxa_aprendizagem, teta):
         # Guarda o total de ajustes por época
         ajustes_por_epoca.append(ajustes_pesos)
         epocas += 1
-    return pesos, epocas
+    return pesos, epocas, ajustes_por_epoca
 
 '''
 # Caso de teste para operador E (lógico)
@@ -60,10 +60,11 @@ pesos = np.array([0.0, 0.0])
 taxa_aprendizagem = 0.1
 teta = 1
 
-pesos, epocas = treinamento(entradas, saidas, pesos, taxa_aprendizagem, teta)
+pesos, epocas, ajustes = treinamento(entradas, saidas, pesos, taxa_aprendizagem, teta)
 
 print("Épocas: ", epocas)
 print("Pesos: ", pesos)
+print("Ajustes", sum(ajustes))
 print(calculo_saida(entradas[0], pesos, teta))
 print(calculo_saida(entradas[1], pesos, teta))
 print(calculo_saida(entradas[2], pesos, teta))
