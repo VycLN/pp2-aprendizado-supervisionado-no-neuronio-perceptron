@@ -9,15 +9,17 @@ def funcao_ativacao(soma, teta):
 
 # Função que realiza o produto escalar de um regitro com os pesos
 def calculo_saida(registro, pesos, teta):
-    s = registro.dot(pesos)
-    return funcao_ativacao(s, teta)
+    soma = registro.dot(pesos)
+    return funcao_ativacao(soma, teta)
 
 # Função de treinamento que é executada até que não haja erro
 def treinamento(entradas, saidas, pesos, taxa_aprendizagem, teta):
     # Inicialização de variáveis
     erro_total = None
-    epocas = 0
+    epocas = 1
     ajustes_por_epoca = []
+    # Exibição inicial dos pesos
+    print(pesos)
     # Loop que garante a execução até que não haja erro
     while (erro_total != 0):
         erro_total = 0
@@ -44,7 +46,7 @@ def treinamento(entradas, saidas, pesos, taxa_aprendizagem, teta):
             if(alterou_pesos == True):
                 print("Pesos: ", pesos)
         # Exibe o número de ajustes de pesos da época
-        print("Número de ajustes no vetor de pesos: ", ajustes_pesos)
+        print("%d ajustes no vetor de pesos na época %d" %(ajustes_pesos, epocas))
         # Guarda o total de ajustes por época
         ajustes_por_epoca.append(ajustes_pesos)
         epocas += 1
