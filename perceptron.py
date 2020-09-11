@@ -21,7 +21,7 @@ def treinamento(entradas, saidas, pesos, taxa_aprendizagem, teta):
     # Exibição inicial dos pesos
     print(pesos)
     # Loop que garante a execução até que não haja erro
-    while (erro_total != 0):
+    while (erro_total != 0.0):
         erro_total = 0
         ajustes_pesos = 0
         # Loop para percorrer todas as entradas/saídas
@@ -50,6 +50,7 @@ def treinamento(entradas, saidas, pesos, taxa_aprendizagem, teta):
         # Guarda o total de ajustes por época
         ajustes_por_epoca.append(ajustes_pesos)
         epocas += 1
+        
     return pesos, epocas, ajustes_por_epoca
 
 '''
