@@ -15,15 +15,18 @@ def calculo_saida(registro, pesos, teta):
 # Função de treinamento que é executada até que não haja erro
 def treinamento(entradas, saidas, pesos, taxa_aprendizagem, teta):
     # Inicialização de variáveis
-    erro_total = None
     epocas = 1
     ajustes_por_epoca = []
+    saidas_treinamento = np.array([], dtype=int)
     # Exibição inicial dos pesos
-    print(pesos)
+    print("Peso:", pesos)
+
+    # Verficando condição inicial para iniciar o loop de treinamento 
+    
     # Loop que garante a execução até que não haja erro
-    while (erro_total != 0.0):
-        erro_total = 0
+    while (np.array_equal(saidas, saidas_treinamento) == False):
         ajustes_pesos = 0
+        saidas_treinamento = np.array([], dtype=int)
         # Loop para percorrer todas as entradas/saídas
         for i in range(0, len(entradas), 1):
             alterou_pesos = False
@@ -31,8 +34,8 @@ def treinamento(entradas, saidas, pesos, taxa_aprendizagem, teta):
             saida_calculada = calculo_saida(np.asarray(entradas[i]), pesos, teta)
             # Cálculo do erro da saída
             erro = saidas[i] - saida_calculada
-            # Acumulação do erro total
-            erro_total += erro
+            # Salvamento da saída
+            saidas_treinamento = np.append(saidas_treinamento, saida_calculada)
             # Loop para atualização do vetor de pesos
             for j in range(0, len(pesos), 1):
                 # Cálculo do novo peso
@@ -50,8 +53,8 @@ def treinamento(entradas, saidas, pesos, taxa_aprendizagem, teta):
         # Guarda o total de ajustes por época
         ajustes_por_epoca.append(ajustes_pesos)
         epocas += 1
-        
-    return pesos, epocas, ajustes_por_epoca
+
+    return pesos, epocas, ajustes_por_epoca, saidas_treinamento
 
 '''
 # Caso de teste para operador E (lógico)
