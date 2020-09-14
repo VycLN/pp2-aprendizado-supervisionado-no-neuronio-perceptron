@@ -20,5 +20,5 @@ Aprendizado Supervisionado com Neurônio Perceptron
 - **requirements.txt:** Arquivo auxiliar, com os pacotes utilizados para a criação e excução de ambiente virtual, para a execução dos Jupyter Notebooks.
 - **RNA - PP2.ipynb:** Notebook principal, onde estão todas as respostas e considerações a cerca do Segundo Projeto Prático. Neste arquivo estão condensados todas as respostas da equipe.
 
-**Vale ressaltar-se que os diretórios com os arquivos originais apenas estão presentes de modo a manter o histórico do trabalho da equipe, de modo em que as respostas e toda a implementação final encontra-se no arquivo [RNA - PP2.ipynb](https://github.com/VycLN/pp2-aprendizado-supervisionado-no-neuronio-perceptron/blob/master/RNA%20-%20PP2.ipynb).**
+**Vale ressaltar que os diretórios com os arquivos originais apenas estão presentes de modo a manter o histórico do trabalho da equipe, de modo em que as respostas e toda a implementação final encontra-se no arquivo [RNA - PP2.ipynb](https://github.com/VycLN/pp2-aprendizado-supervisionado-no-neuronio-perceptron/blob/master/RNA%20-%20PP2.ipynb).**
 
