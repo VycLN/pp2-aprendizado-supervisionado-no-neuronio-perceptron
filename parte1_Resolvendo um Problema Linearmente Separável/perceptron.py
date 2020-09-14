@@ -1,4 +1,4 @@
-# Autor: Vyctor Lima Negreiros
+# Autor: Vyctor Lima Negreiros - 1615080372 - vln.eng16@uea.edu.br
 
 # Importação de bibliotecas
 import numpy as np
